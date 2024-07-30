@@ -2,7 +2,6 @@ let ROUTES = {};
 let rootEl;
 
 export const setRootEl = (el) => {
-  // assign rootEl
   rootEl = el;
 
   return rootEl;
@@ -37,7 +36,6 @@ export const renderView = (pathname, props = {}) => {
 
   if (!viewPath) {
     navigateTo("/error");
-    // throw new Error("Invalid viewPath");
     return;
   }
   const component = viewPath(props);
@@ -58,16 +56,12 @@ export const navigateTo = (pathname, props = {}) => {
 
   // render the view passing props
   renderView(pathname, props);
-  // Nota: ya hablamos de una función renderView, podemos usarla dentro de navigateTo para mantener el código DRY (Don't Repeat Yourself, No te repitas)
+  
 };
 export const onURLChange = (location) => {
   // parse the location for the pathname and search params
 
   const { pathname, search } = location;
-  // console.log('este es el pathname --->' + pathname)
-  // console.log('este es el search --->' + search)
-  // convert the search params to an object
   const props = queryStringToObject(search);
-  // render the view with the pathname and object
   renderView(pathname, props);
 };
