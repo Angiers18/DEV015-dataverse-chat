@@ -1,22 +1,21 @@
 @import url('globales.css');
 
-.card-character-title{
-    background-color: var(--color-red);
-    width: 64rem;
-    font-size: 6rem;
-    border-left: 2rem solid var(--color-black);
-    border-bottom: 2rem solid var(--color-black);
-    margin-bottom: 0;
-}
-
 .card-character-content{
     background-color: var(--color-black);
     width: 60rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 1rem;
     padding: 3rem;
-
+    
+}
+.card-character-title{
+    background-color: var(--color-red);
+    width: 100%;
+    font-size: 6rem;
+    border-left: 2rem solid var(--color-black);
+    border-bottom: 2rem solid var(--color-black);
+    margin: 0;
 }
 .card-p{
     font-size: 1.5rem;
@@ -49,4 +48,96 @@
 
 .card-character-facts{
     font-size: 1.5rem;
+}
+
+/* SECCION DE CHAT---------------------------- */
+.section-chat{
+    background-color: rgba( 217, 194, 194, 0.7);
+    width: 80%;
+    height: 40rem;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+}
+
+#section-profile{
+    background-color: var(--color-withe);
+    width: 90%;
+    border-radius: 23px 23px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--color-black);
+    padding: 1rem;
+}
+
+.image-profile{
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+    border-radius: 50%;
+}
+.name-profile{
+    color: var(--color-black);
+    margin: 0;
+    font-size: 1.25rem;
+    text-align: start;
+}
+
+.shortD-profile{
+    text-align: start;
+    color: var(--color-black);
+    font-size: 14px;
+}
+
+.description-profile{
+    /* display: none; */
+    width: 75%;
+}
+
+.description{
+    color: var(--color-black);
+    /* display: none; */
+    text-align: justify;
+}
+.show-profile{
+    color: var(--color-red);
+    text-align: end;
+}
+
+.user-chat{
+    width: 90%;
+    height: 3rem;
+    background-color: var(--color-withe);
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#input-chat{
+    border: none;
+    width: 70%;
+    margin-left: 5px;
+    border-radius: 50px;
+    background: transparent;
+
+}
+#send-message{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+}
+
+
+@media (min-width:1024px) {
+    .card-character-content{
+        display: flex;
+    }
 }
