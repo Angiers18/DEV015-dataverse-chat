@@ -1,0 +1,67 @@
+@import url('globales.css');
+
+.contentDescription {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.title-api {
+    font-size: 2rem;
+}
+
+#apiKey-input {
+    width: 100%;
+    height: 2rem;
+    color: var(--color-black);
+    margin-bottom: 2rem;
+}
+
+.buttons-apiKey {
+    display: flex;
+    justify-content: space-between;
+}
+
+#save-apiKey {
+    background-color: var(--color-blue);
+    font-size: 1rem;
+    padding: 5px;
+}
+
+#delete-apiKey {
+    background-color: var(--color-red);
+    font-size: 1rem;
+    padding: 5px;
+}
+
+@media(min-width: 1024px) {
+
+    .contentDescription {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    .title-api {
+        font-size: 4rem;
+    }
+
+    .description-api {
+        font-size: 2rem;
+    }
+
+    #apiKey-input {
+        width: 100%;
+        height: 2rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    
+    #save-apiKey {
+        
+        font-size: 2rem;
+    }
+    
+    #delete-apiKey {
+        
+        font-size: 2rem;
+    }
+}
