@@ -1,13 +1,14 @@
 import header from "../components/header.js";
 import data from "../data/dataset.js";
+import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 function chat(props) {
   const contentChat = document.createElement("div");
-  
+
   const character = data.find((item) => item.id === props);
   contentChat.appendChild(header());
-  
-  document.title=`Dataverse Chat - ${character.name}`;
+
+  document.title = `Dataverse Chat - ${character.name}`;
 
   const showData = document.createElement("div");
   showData.classList.add = "card-character";
@@ -52,11 +53,15 @@ function chat(props) {
   </div>
         `;
   contentChat.appendChild(showData);
+
+  const sendButton = contentChat.querySelector('#send-message')
+
+  sendButton.addEventListener('click', () => {
+    console.log('boton de enviar')
+    communicateWithOpenAI()
+  })
+
   return contentChat;
-  // <div class='card-image'
-  //     alt='imagen de ${character.name}'
-  //     style='background-image: url(${character.imageUrl})'
-  // ></div>
 }
 
 export default chat;
