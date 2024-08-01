@@ -56,7 +56,7 @@ export const navigateTo = (pathname, props = {}) => {
 
   // render the view passing props
   renderView(pathname, props);
-  
+
 };
 export const onURLChange = (location) => {
   // parse the location for the pathname and search params
