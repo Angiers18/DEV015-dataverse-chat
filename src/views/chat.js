@@ -54,12 +54,16 @@ function chat(props) {
         `;
   contentChat.appendChild(showData);
 
-  const sendButton = contentChat.querySelector('#send-message')
+  const sendButton = contentChat.querySelector("#send-message");
+  const message = [
+    { role: "system", content: `Tu vas a tomar el rol de ${character.name}, tu personalidad y respuestas se van a basar en ${character.description} y tus respuestas no van a tener mas de 50 palabras` },
+    { role: "user", content: "Cuentame de ti" },
+  ];
 
-  sendButton.addEventListener('click', () => {
-    console.log('boton de enviar')
-    communicateWithOpenAI()
-  })
+  sendButton.addEventListener("click", () => {
+    console.log("boton de enviar");
+    communicateWithOpenAI(message);
+  });
 
   return contentChat;
 }
