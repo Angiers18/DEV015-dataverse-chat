@@ -1,55 +1,5 @@
 @import url('globales.css');
 
-.card-character-content{
-    background-color: var(--color-black);
-    width: 60rem;
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 3rem;
-    
-}
-.card-character-title{
-    background-color: var(--color-red);
-    width: 100%;
-    font-size: 6rem;
-    border-left: 2rem solid var(--color-black);
-    border-bottom: 2rem solid var(--color-black);
-    margin: 0;
-}
-.card-p{
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.card-content-facts{
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-}
-.card-character-ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: justify;
-}
-.card-image{
-    width: 80%;
-    /* height: auto; */
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.card-img{
-    width: 80%;
-    height: auto;
-}
-
-.card-character-facts{
-    font-size: 1.5rem;
-}
-
 /* SECCION DE CHAT---------------------------- */
 .section-chat{
     background-color: rgba( 217, 194, 194, 0.7);
@@ -69,7 +19,7 @@
     border-radius: 23px 23px 0 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     color: var(--color-black);
     padding: 1rem;
@@ -95,37 +45,33 @@
 }
 
 .description-profile{
-    /* display: none; */
     width: 75%;
-}
-
-.description{
-    color: var(--color-black);
-    /* display: none; */
-    text-align: justify;
-}
-.show-profile{
-    color: var(--color-red);
-    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .user-chat{
     width: 90%;
-    height: 3rem;
+    height: 4rem;
     background-color: var(--color-withe);
-    border-radius: 50px;
+    border-radius: 25px;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    padding: 5px 0;
 }
 #input-chat{
     border: none;
     width: 70%;
-    margin-left: 5px;
-    border-radius: 50px;
     background: transparent;
+    outline: none;
+    color: var(--color-black);
+    font-size: 1rem;
+    padding: 0;
+    resize: none;
 
 }
 #send-message{
@@ -134,10 +80,130 @@
     border-radius: 50%;
     background-color: var(--color-blue);
 }
+#messages{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 1rem;
+    width: 90%;
+    height: 100%;
+    padding: 1rem;
+}
+.user-message{
+    background-color: var(--gris-chat);
+    box-shadow: 5px var(--color-black);
+    max-width: 15rem;
+    border-radius: 15px 15px 0;
+    text-align: left;
+    padding: 0.5rem;
+    align-self: flex-end;
+}
 
+.system-reply{
+    background-color: var(--color-withe);
+    color: var(--color-black);
+    box-shadow: 5px var(--color-black);
+    max-width: 15rem;
+    border-radius: 0 15px 15px;
+    text-align: right;
+    padding: 0.5rem;
+    align-self: flex-start;
+    
+}
 
 @media (min-width:1024px) {
-    .card-character-content{
+    .main-content-chat{
         display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card-character-content{
+        background-color: var(--color-black);
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 3rem;
+        
+    }
+    .card-character-title{
+        background-color: var(--color-red);
+        width: 100%;
+        font-size: 6rem;
+        border-left: 2rem solid var(--color-black);
+        border-bottom: 2rem solid var(--color-black);
+        margin: 0;
+    }
+    .card-p{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    
+    .card-content-facts{
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+    }
+    .card-character-ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: justify;
+    }
+    .card-div-image{
+        width: 80%;
+        /* height: auto; */
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .card-img{
+        width: 80%;
+        height: auto;
+    }
+    
+    .card-character-facts{
+        font-size: 1.5rem;
+    }
+/* -------------CHAT----------------- */
+    .section-chat{
+        width: 50rem;
+        height: 55rem;
+    }
+
+    #section-profile{
+        width: 96%;
+    }
+
+    .name-profile{
+        font-size: 2rem;
+    }
+
+    .shortD-profile{
+        font-size: 1.25rem;
+    }
+
+    .image-profile{
+        width: 6rem;
+        height: 6rem;
+    }
+    .user-chat{
+        height: 6rem;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    #input-chat{
+        font-size: 1.5rem;
+    }
+
+    .user-message{
+        padding: 1rem;
+        font-size: 1.5rem;
+        max-width: 30rem;
+        border-radius: 25px 25px 0;
     }
 }

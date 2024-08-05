@@ -372,8 +372,8 @@ button {
         display: none;
     }
     img{
-        height: 5rem;
-        padding-left: 2rem;
+        /* height: 5rem; */
+        /* padding-left: 2rem; */
     }
 
     .container-button-header{

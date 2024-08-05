@@ -12,11 +12,11 @@ export const communicateWithOpenAI = (message) => {
     model: "gpt-4",
     messages: message
   };
-
+  
   if (!apiKey) {
     return Promise.reject(new Error("No se encontro una apikey"));
   }
-
+  
   return fetch(apiOpenAI, {
     method: "POST",
     headers: header,
@@ -31,7 +31,9 @@ export const communicateWithOpenAI = (message) => {
       return response.json();
     })
     .then(data => {
-      console.log(data);
-      console.log("Assistant's reply:", data.choices[0].message.content);})
+      const reply = data.choices[0].message.content;
+      // console.log("User's prompt:", data.messages[1].content);
+      console.log("Assistant's reply:", reply );
+      console.log(data);})
     .catch(error => console.error("ERROOOR DE OPEN AI" + error))
 };
