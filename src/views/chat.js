@@ -58,6 +58,7 @@ function chat(props) {
     { role: "user", content: inputUser.value }
   ];
   // const reply = data.choices[0].message.content;
+ 
 
   function addUserMessage() {
     const userMessage = document.createElement('div');
@@ -65,20 +66,46 @@ function chat(props) {
     userMessage.innerHTML = inputUser.value;
     contentMessages.appendChild(userMessage);
   }
-  function addSystemReply() {
+  function addSystemReply(reply) {
     const userMessage = document.createElement('div');
     userMessage.classList.add('system-reply');
-    userMessage.innerHTML = data.choices[0].message.content;
+    userMessage.innerHTML = reply;
     contentMessages.appendChild(userMessage);
   }
 
   sendButton.addEventListener("click", () => {
     // console.log("boton de enviar");
     addUserMessage();
-    communicateWithOpenAI(message);
+    communicateWithOpenAI(character, inputUser.value).then( reply => {
+      addSystemReply(reply)
+    })
     inputUser.value='';
-    addSystemReply();
+    // addSystemReply();
+    contentMessages.scrollTop = contentMessages.scrollHeight;
   });
+
+  // function sendMessage(){
+  //   // console.log("boton de enviar");
+    
+  //   addUserMessage();
+  //   communicateWithOpenAI(message);
+  //   inputUser.value='';
+  //   // addSystemReply();
+  // }
+  // sendButton.addEventListener("click", sendMessage());
+  // sendButton.addEventListener("keydown", 
+  //   function(event)
+  //   {if(event.key === 'Enter' || event.keyCode === 13){
+  //     event.preventDefault; sendMessage()
+  //   }});
+
+  // sendButton.addEventListener("click", () => {
+  //   // console.log("boton de enviar");
+  //   addUserMessage();
+  //   communicateWithOpenAI(message);
+  //   inputUser.value='';
+  //   addSystemReply();
+  // });
 
   return contentChat;
 }

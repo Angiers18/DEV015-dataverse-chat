@@ -1,5 +1,9 @@
 @import url('globales.css');
 
+.card-character-content{
+    display: none;
+}
+
 /* SECCION DE CHAT---------------------------- */
 .section-chat{
     background-color: rgba( 217, 194, 194, 0.7);
@@ -15,20 +19,21 @@
 
 #section-profile{
     background-color: var(--color-withe);
-    width: 90%;
+    width: 100%;
     border-radius: 23px 23px 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    gap: 5px;
     flex-wrap: wrap;
     color: var(--color-black);
-    padding: 1rem;
+    
 }
 
 .image-profile{
     width: 4rem;
     height: 4rem;
-    margin: 0;
+    margin: 8px;
     border-radius: 50%;
 }
 .name-profile{
@@ -45,7 +50,7 @@
 }
 
 .description-profile{
-    width: 75%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +93,11 @@
     width: 90%;
     height: 100%;
     padding: 1rem;
+
+    overflow-y: scroll;
 }
+
+
 .user-message{
     background-color: var(--gris-chat);
     box-shadow: 5px var(--color-black);
