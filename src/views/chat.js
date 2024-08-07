@@ -20,14 +20,11 @@ function chat(props) {
       <p class='card-character-d card-p'>${character.description}</p>
       <div class='card-content-facts'>
         <ul class='card-character-ul'>
-          <li class='card-character-facts'>Especie:<span> ${character.facts.species}</span></li>
-          <li class='card-character-facts'>Genero:<span> ${character.facts.gender}</span></li>
-          <li class='card-character-facts'>Edad:<span> ${character.facts.age}</span></li>
-          <li class='card-character-facts'>Ciudad:<span> ${character.facts.city}</span></li>
+          <li class='card-character-facts'>Especie:<span class= 'facts-span'> ${character.facts.species}</span></li>
+          <li class='card-character-facts'>Genero:<span class= 'facts-span'> ${character.facts.gender}</span></li>
+          <li class='card-character-facts'>Edad:<span class= 'facts-span'> ${character.facts.age}</span></li>
+          <li class='card-character-facts'>Ciudad:<span class= 'facts-span'> ${character.facts.city}</span></li>
         </ul>
-        <div class='card-div-image'>
-          <img class='card-img' src='${character.imageUrl}'>
-        </div>
         
       </div>
   </div>
@@ -43,7 +40,11 @@ function chat(props) {
       <div id = 'messages'></div>
       <div class = 'user-chat'>
         <textarea id = 'input-chat'></textarea>
-        <div id = 'send-message'></div>
+        <div id = 'send-message'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -53,12 +54,6 @@ function chat(props) {
   const sendButton = contentChat.querySelector("#send-message");
   const inputUser = contentChat.querySelector("#input-chat");
   const contentMessages = contentChat.querySelector("#messages");
-  const message = [
-    { role: "system", content: `Eres ${character.name}, tu personalidad se basa en ${character.description}; vas a responder a los mensajes y preguntas del usuario y tus respuestas no van a tener más de 20 palabras` },
-    { role: "user", content: inputUser.value }
-  ];
-  // const reply = data.choices[0].message.content;
- 
 
   function addUserMessage() {
     const userMessage = document.createElement('div');
@@ -74,39 +69,12 @@ function chat(props) {
   }
 
   sendButton.addEventListener("click", () => {
-    // console.log("boton de enviar");
     addUserMessage();
     communicateWithOpenAI(character, inputUser.value).then( reply => {
       addSystemReply(reply)
     })
     inputUser.value='';
-    // addSystemReply();
-    contentMessages.scrollTop = contentMessages.scrollHeight;
   });
-
-  // function sendMessage(){
-  //   // console.log("boton de enviar");
-    
-  //   addUserMessage();
-  //   communicateWithOpenAI(message);
-  //   inputUser.value='';
-  //   // addSystemReply();
-  // }
-  // sendButton.addEventListener("click", sendMessage());
-  // sendButton.addEventListener("keydown", 
-  //   function(event)
-  //   {if(event.key === 'Enter' || event.keyCode === 13){
-  //     event.preventDefault; sendMessage()
-  //   }});
-
-  // sendButton.addEventListener("click", () => {
-  //   // console.log("boton de enviar");
-  //   addUserMessage();
-  //   communicateWithOpenAI(message);
-  //   inputUser.value='';
-  //   addSystemReply();
-  // });
-
   return contentChat;
 }
 

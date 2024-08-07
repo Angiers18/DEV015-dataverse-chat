@@ -56,12 +56,10 @@
     }
     
     #save-apiKey {
-        
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
     
     #delete-apiKey {
-        
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
 }
