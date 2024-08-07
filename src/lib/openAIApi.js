@@ -1,7 +1,7 @@
 //Importa la función para obtener la API KEY desde apiKey.js
 import { getApiKey } from "./apiKey.js";
 
-let SentMessage = [];
+const SentMessage = [];
 
 export const communicateWithOpenAI = (character, message) => {
   const apiKey = getApiKey();
@@ -43,12 +43,9 @@ export const communicateWithOpenAI = (character, message) => {
     })
     .then(data => {
       const reply = data.choices[0].message.content;
-      console.log("Assistant's reply:", reply);
-
       // Agrega la respuesta del asistente al historial
       SentMessage.push({ role: "assistant", content: reply });
 
-      console.log('Conversación:', SentMessage);
       return reply;
     })
     .catch(error => console.error("Error de OpenAI:", error));
