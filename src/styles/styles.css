@@ -107,8 +107,7 @@ body {
     gap: 1rem;
     width: 100%;
     background-color: rgba(217, 217, 217, 0.6);
-    padding-top: 1rem;
-    /* padding-bottom: 1rem; */
+    padding: 1rem 0;
 
 }
 
@@ -259,6 +258,8 @@ ul {
 /* AJUSTA TEXTO E IMAGEN DE LAS TARJETAS-------------------------------------------------*/
 .item-lista dl {
     flex: 3;
+    display: flex;
+    flex-direction: column;
     
 }
 
@@ -291,16 +292,26 @@ ul {
     font-size: 1.3rem;
 }
 
+.bubbleMessage{
+    width: 2rem;
+    /* background-color: #e6c647; */
+    margin: 0 1rem;
+    align-self: flex-end;
+}
+
+.bubbleMessage:hover{
+    transform: scale(1.05);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    cursor: pointer;
+}
+
 /* CAMBIOS AL PASAR EL MOUSE-------------------------------------------------*/
 .item-lista:hover {
     transform: scale(1.05);
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
 }
-
-/* button:hover {
-    background-color: #112858;
-} */
 
 #buttonStats:hover {
     background-color: #870e0c;
@@ -370,10 +381,6 @@ button {
 
     .computeStats{
         display: none;
-    }
-    img{
-        /* height: 5rem; */
-        /* padding-left: 2rem; */
     }
 
     .container-button-header{
