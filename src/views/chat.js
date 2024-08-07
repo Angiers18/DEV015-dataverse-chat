@@ -74,7 +74,6 @@ function chat(props) {
       addSystemReply(reply)
     })
     inputUser.value='';
-    contentMessages.scrollTop = contentMessages.scrollHeight;
   });
   return contentChat;
 }
