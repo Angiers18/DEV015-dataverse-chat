@@ -33,17 +33,27 @@ function apiKey() {
     key = inputApi.value;
     //DEVUELVE UNDEFINDED
     setApiKey(key);
-
-    console.log("API Key saved:", getApiKey());
-    //SI DEVUELVE LA APIKEY DEL INPUT
-    // getApiKey("API KEY", key)
   }
   function eventDelete() {
     inputApi.value = "";
     localStorage.removeItem("API KEY");
-    console.log("API Key deleted:", getApiKey());
+    // console.log("API Key deleted:", getApiKey());
   }
 
+  function alertSave() {
+    alert("se ha guardado la ApiKey.");
+  }
+  function alertDelete() {
+    if (confirm("Seguro quieres borrar la ApiKey.") === true) {
+      eventDelete()
+      alert("ApiKey Borrada.");
+    } else {
+      alert("Cancelado!!");
+    }
+  }
+  saveButton.addEventListener("click", eventSave);
+  saveButton.addEventListener("click", alertSave);
+  deleteButton.addEventListener("click", alertDelete);
   saveButton.addEventListener("click", eventSave);
   deleteButton.addEventListener("click", eventDelete);
 
