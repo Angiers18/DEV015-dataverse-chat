@@ -58,14 +58,14 @@ Realizamos el prototipo de alta fidelidad en base a las historias de usuarias y 
 
 ## 5. Test de Usabilidad
 
-  - En las tarjetas no se tenía claro que se podía dar click en ellas para ir a la vista de chat. 
-**Solución:** Agregar un botón con un icono de chat para que los usuarios noten que las tarjetas tienen una funcionalidad. 
+  - En las tarjetas no se tenía claro que se podía dar click en ellas para ir a la vista de chat.
+  - **Solución:** Agregar un botón con un icono de chat para que los usuarios noten que las tarjetas tienen una funcionalidad. 
 
-  - En el chat los mensajes del usuario estaban a la izquierda y las respuestas a la derecha. 
-**Solución:**  se invirtió el orden para que fuera más intuitivo para el usuario 
+  - En el chat los mensajes del usuario estaban a la izquierda y las respuestas a la derecha.
+  - **Solución:**  se invirtió el orden para que fuera más intuitivo para el usuario 
 
-  - En la sección del personaje del chat (phone size) había una opción de ver más y mostraba una descripción más detallada del personaje. 
-**Solución:**  La descripción mostrada era muy extensa y le quitaba protagonismo a lo más importante que es el chat. 
+  - En la sección del personaje del chat (phone size) había una opción de ver más y mostraba una descripción más detallada del personaje.
+  - **Solución:**  La descripción mostrada era muy extensa y le quitaba protagonismo a lo más importante que es el chat. 
 
 ***Equipo de Trabajo***
 [Anyerlin Rodriguez](https://github.com/Angiers18)
